@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "edition": "0.1.0",
+  "license": "MIT",
+  "origin": "Henry2012; developed with AI assistance; owner confirmed 2026-11-11",
+  "files": [
+    {
+      "path": "skills/handoff/SKILL.md",
+      "sha256": "89f002f4adc3e6989db34069902f6383c0ac74832f064f232b684434927d3e6e"
+    },
+    {
+      "path": "skills/reviewing-design-documents/SKILL.md",
+      "sha256": "734ceb4ea9056c5764b7e7575b687ee318e97676ebdd45cca8194b8b3420fde6"
+    },
+    {
+      "path": "skills/reviewing-design-documents/agents/openai.yaml",
+      "sha256": "73c2bb6665a46aa7186ab1b1d0d0330734737ad0246475b0cc9752a4274211da"
+    },
+    {
+      "path": "skills/reviewing-design-documents/references/eight-question-rubric.md",
+      "sha256": "1893ad685111ea6de4db625bf42ca24acbc720e8577aca8f26c0602702ffc0ac"
+    },
+    {
+      "path": "skills/performance-self-review/SKILL.md",
+      "sha256": "ad4b35858841254816dccd0b50628014bfae784020dc6e8ff6b961f76e7e719b"
+    },
+    {
+      "path": "skills/performance-self-review/references/example.md",
+      "sha256": "70a3c0f5e0d6c170f68ebf9a78fba80f4c250ef6c210abfb717a940779d03dda"
+    }
+  ]
+}

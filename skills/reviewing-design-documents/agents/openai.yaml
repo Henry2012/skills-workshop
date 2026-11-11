@@ -1,0 +1,6 @@
+interface:
+  display_name: "Review Design Documents"
+  short_description: "Explicit design review with eight evidence-led questions"
+  default_prompt: "Use $reviewing-design-documents to audit this design document and return an evidence-led readiness report."
+policy:
+  allow_implicit_invocation: false
