@@ -2,7 +2,7 @@
 
 ## English
 
-This skill's workflow, technical adaptations and examples were developed by Henry2012 with AI assistance. The owner confirmed this origin and requested the public edition on 2026-11-11. The published original material is covered by the repository's [MIT license](../../../LICENSE).
+This skill's workflow, technical adaptations and examples were developed by Henry2012 with AI assistance. The owner confirmed this origin and requested the public edition on 2026-11-11. The published original material is covered by the repository's [MIT license](../LICENSE).
 
 ASD-STE100 Simplified Technical English was an inspiration, specifically the Issue 9 edition dated 2025-01-15 used during development. See the [official background page](https://www.asd-ste100.org/about_STE.html). ASD owns the standard and its associated marks; this repository is not affiliated with or endorsed by ASD.
 

@@ -1,41 +1,31 @@
 # handoff
 
-**Carry the state, keep the boundaries.**
+[简体中文](README.zh-CN.md) · [日本語](README.ja.md)
 
-[简体中文](README.zh-CN.md) · [日本語](README.ja.md) · [Workshop](../../README.md)
+Carry the current conversation into a durable handoff so a fresh agent can continue the authorized work.
 
-A long conversation contains decisions, abandoned ideas, commands, and several versions of “done.” This skill turns the durable parts into a handoff a fresh agent can inspect.
+**Input** — Supply the next session's focus, the current goal, exact scope, artifacts and verification results. The latest request and the continuing goal are recorded separately.
 
-Its important design choice is to keep the **current goal** separate from the **latest request**. A side question does not silently replace the original scope. Completion claims carry evidence and an explicit verification boundary. Existing permission to continue survives the handoff, while historical commands remain records.
+**Output** — Expect a `HANDOFF.md` at the requested path or project root, with 13 fixed Chinese section headings. It records evidence, verification boundaries, unknowns and the next session's first action.
 
-**Input:** a conversation or work ledger, current instructions, artifacts and verification results.
+## Working rules
 
-**Output:** a `HANDOFF.md` with 13 fixed sections, unresolved items, and a read-only takeover instruction.
+Keep closed lists complete. Link existing artifacts instead of retelling the whole conversation. Remove secrets. Start takeover with reading and restatement; preserve existing authorization without replaying historical commands or automatically rerunning locked results.
 
 ## Minimal example
 
-From the repository root, run:
+Install for Codex from your project (Node.js 22.20+):
 
 ```sh
-python3 tools/demo_handoff.py
+npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill handoff -a codex -y --copy
 ```
 
-This runs a tiny offline test suite and materializes a reference handoff with real local paths under `build/handoff/`. It is a deterministic demonstration, not an LLM invocation. Read [the scenario](../../examples/handoff/scenario.md) and the generated `build/handoff/HANDOFF.md`.
+> Use handoff to prepare a fresh session for the current task. Keep the exact scope, link evidence, and state what the next agent may do.
 
-To exercise the skill itself, ask your agent:
-
-> Use `skills/handoff/SKILL.md`. Read `examples/handoff/scenario.md` and `build/handoff/test-result.json`. Write the handoff to `build/handoff/AGENT_HANDOFF.md`, using real absolute paths. Preserve the existing scope and permission boundaries. Do not deploy or rerun completed work.
-
-## Inspect the result
-
-The goal is still the fictional offline status-helper task. Passing tests support only the local helper. Production state remains unverified. The next session reads and restates the handoff before continuing the already-authorized documentation task. It must not rerun a deployment command merely because the transcript mentions one.
+[Scenario](https://github.com/Henry2012/skills-workshop/blob/main/examples/handoff/scenario.md) · [Offline demo](https://github.com/Henry2012/skills-workshop/blob/main/tools/demo_handoff.py) · [Comparison](https://github.com/Henry2012/skills-workshop/blob/main/docs/HANDOFF-COMPARISON.md)
 
 ## Dependencies and limits
 
-An agent needs access to the conversation and relevant files. Python 3.10+ is required only for this demo. No account, API key, network service, or other skill is required. A handoff cannot recover facts that were never captured.
+An agent needs access to the conversation and relevant files. No account, service or other skill is required. Missing evidence remains unknown. Python 3.10+ is needed only for the offline demo.
 
-The fixed output headings are Chinese and remain unchanged. Explanatory prose may use your requested language. Do not publish real handoffs without reviewing their paths, identifiers and contents.
-
-## Origin
-
-Developed by Henry2012 with AI assistance; source workflow version 0.4.1. This edition preserves the runtime contract and adds introductions and an executable fixture. [Runtime rules](SKILL.md) · [MIT](../../LICENSE)
+Developed by Henry2012 with AI assistance. This is a fictional demonstration, not an LLM benchmark. [SKILL.md](SKILL.md) · [MIT](LICENSE) · [Workshop](https://github.com/Henry2012/skills-workshop)

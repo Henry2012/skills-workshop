@@ -12,20 +12,36 @@ Henry2012 です。Agent との作業で判断が曖昧になりやすい場面�
 
 ## 使い始める
 
-リポジトリをクローンし、ローカルファイルを読める Agent で開きます。
+**Node.js 22.20 以降**と npm/npx が必要です。利用するプロジェクトのディレクトリで実行します。Vercel の [skills CLI](https://github.com/vercel-labs/skills) を、今回検証したバージョンに固定しています。
+
+**Codex 向けに 4 つすべて**をインストール：
+
+```sh
+npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill '*' -a codex -y --copy
+```
+
+**設計レビューだけ**をインストール：
+
+```sh
+npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill reviewing-design-documents -a codex -y --copy
+```
+
+**Claude Code** では `-a codex` を `-a claude-code` に置き換えます。`'*'` の引用符は残してください。現在のプロジェクトに確認なしでインストールし、同名の既存 Skill を置き換える可能性があります。変更済みの内容を先に確認してください。グローバルインストールは指定していません。
+
+インストール後、Agent に依頼します。
+
+> reviewing-design-documents と必須 rubric を使い、この設計が実装に進めるか読み取り専用でレビューしてください。
+
+`--copy` を明示し、Codex では `.agents/skills/`、Claude Code では `.claude/skills/` にファイルをコピーします。ファイルの配置後、Agent 側の Skill 検出を更新する必要がある場合があります。[インストール検証と限界](docs/INSTALLATION.md)を参照してください。
+
+例の確認やリポジトリのチェックには、別途クローンします。
 
 ```sh
 git clone https://github.com/Henry2012/skills-workshop.git
 cd skills-workshop
 ```
 
-まず、こう依頼してください。
-
-> `skills/reviewing-design-documents/SKILL.md` と必須の rubric を読み、`examples/design-review/design.md` が実装を開始できる状態か、読み取り専用でレビューしてください。日本語で報告してください。
-
-[参照レビュー](examples/design-review/review.md)と比較します。例では「受付」と「エクスポート完了」の両方を成功と呼んでいます。Agent は矛盾を見つけ、両方の記述を根拠にできるでしょうか。
-
-自分のプロジェクトでは、選んだ Skill のディレクトリを Agent が読めるようにし、依頼で明示的に指定します。ネイティブな Skill インストールに対応するツールなら、その手順に従い、参照ファイルも一緒に配置してください。同名の Skill があれば、置き換える前に確認します。現在の配布物は Markdown の Skills で、プラグインインストーラーはありません。
+`examples/design-review/design.md` をレビューさせ、[参照出力](examples/design-review/review.md)と比較します。「成功」の矛盾と両方の根拠を示せるか確認してください。
 
 ## この Skill を作る理由
 

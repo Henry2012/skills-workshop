@@ -1,12 +1,16 @@
 # reviewing-design-documents
 
-**Before you build it, ask eight questions.**
+[简体中文](README.zh-CN.md) · [日本語](README.ja.md)
 
-[简体中文](README.zh-CN.md) · [日本語](README.ja.md) · [Workshop](../../README.md)
+Review a design's readiness for its next stage using eight evidence-led questions.
 
-Use this when a design document needs a readiness judgment before its next stage. Explicitly select the skill; a generic request to write or discuss a design does not activate it.
+**Input** — Explicitly select this skill. Supply a design version, the intended decision and lifecycle stage, and authorized supporting material. A skill name inside quoted text is not an invocation.
 
-Two sections define “success” differently. A launch plan has no way back. A requirement says “fast” without saying how to measure it. A polished document can hide all three. This skill makes the reviewer name the problem, cite the evidence, and explain which next decision it affects.
+**Output** — Return seven sections covering the verdict, scope, blockers, findings, eight-question coverage, open items and next actions. Verdicts are READY, READY_WITH_ACTIONS, NOT_READY or INSUFFICIENT_EVIDENCE.
+
+## Working rules
+
+Read the complete rubric before judging. Cite evidence, keep one finding per root cause, and separate coverage from finding evidence and question status. A missing attachment is not proof of a design defect. Work read-only; a verdict grants no new execution permission.
 
 ## The eight questions
 
@@ -35,24 +39,21 @@ These are illustrative applications, not claims of evaluated performance in ever
 
 The review's distinctive rule is **one finding per root cause**. A missing state model can affect several questions without becoming four separate defects. Coverage, evidence strength, and readiness are separate states. Legitimate backup systems are not automatically “redundant,” and unanswered questions do not become a clean bill of health.
 
-**Input:** a versioned design, the intended decision and lifecycle stage, plus authorized supporting evidence.
-
-**Output:** a seven-section report with findings, Q1–Q8 coverage, verification needs, next actions, and one of `READY`, `READY_WITH_ACTIONS`, `NOT_READY`, or `INSUFFICIENT_EVIDENCE`.
 
 ## Minimal example
 
-> Use `skills/reviewing-design-documents/SKILL.md` and read its required rubric. Review `examples/design-review/design.md` for implementation readiness, read-only. Return the report in English.
+Install for Codex from your project (Node.js 22.20+):
 
-Compare your agent's output with [the reference report](../../examples/design-review/review.md). It identifies a conflict between request acceptance and completed work. The report cites both definitions and records one consistency blocker. Run `python3 tools/check.py` to check the committed example's structural contract.
+```sh
+npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill reviewing-design-documents -a codex -y --copy
+```
 
-For a second probe, supply only section 2 and say the rest is unavailable. The verdict must reflect insufficient coverage; it must not certify unseen sections.
+> Use reviewing-design-documents to review the fictional design linked below for implementation readiness. Read the full rubric and return a read-only report.
+
+[Rubric](references/eight-question-rubric.md) · [Input](https://github.com/Henry2012/skills-workshop/blob/main/examples/design-review/design.md) · [Output](https://github.com/Henry2012/skills-workshop/blob/main/examples/design-review/review.md)
 
 ## Dependencies and limits
 
-No external service or other skill is required for a local document review. The agent must read the [complete rubric](references/eight-question-rubric.md). It may need authorized external sources for factual claims; unavailable evidence remains a gap.
+Local review needs no account or other skill. External claims require permitted sources or an explicit evidence gap. This is not production testing or specialist certification; no cross-model accuracy has been established.
 
-This skill reviews supplied evidence. It is not a production test, specialist certification, or authorization to modify files. The rubric defines the verdict mapping, but model interpretation can still vary. No cross-model accuracy claim is made.
-
-## Origin
-
-Developed by Henry2012 with AI assistance, including the rubric, false-positive controls and secondary-question handling. Public packaging preserves those rules. [Runtime entry](SKILL.md) · [MIT](../../LICENSE)
+Developed by Henry2012 with AI assistance. This is a fictional demonstration, not an LLM benchmark. [SKILL.md](SKILL.md) · [MIT](LICENSE) · [Workshop](https://github.com/Henry2012/skills-workshop)

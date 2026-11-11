@@ -12,20 +12,36 @@
 
 ## 开始使用
 
-克隆仓库，在能读取本地文件的 Agent 中打开：
+需要 **Node.js 22.20+** 和 npm/npx。在准备使用这些技能的项目目录里执行。安装使用 Vercel 的 [skills CLI](https://github.com/vercel-labs/skills)，固定为本次实测版本。
+
+为 **Codex 安装全部四项**：
+
+```sh
+npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill '*' -a codex -y --copy
+```
+
+只安装**设计审查**：
+
+```sh
+npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill reviewing-design-documents -a codex -y --copy
+```
+
+使用 **Claude Code** 时，将 `-a codex` 换成 `-a claude-code`。保留 `'*'` 的引号。这些命令安装到当前项目并跳过确认，可能替换已有同名 Skill，执行前先检查自己的改动；它们不要求全局安装。
+
+安装后告诉 Agent：
+
+> 使用 reviewing-design-documents，完整读取它要求的 rubric，只读审查这份设计是否具备实施条件。
+
+显式指定 `--copy`：Codex 文件复制到 `.agents/skills/`，Claude Code 文件复制到 `.claude/skills/`。文件安装完成后，Agent 可能需要刷新技能发现。详见[安装实测与边界](docs/INSTALLATION.md)。
+
+要查看案例或运行仓库检查，可以另行克隆：
 
 ```sh
 git clone https://github.com/Henry2012/skills-workshop.git
 cd skills-workshop
 ```
 
-先试这个请求：
-
-> 使用 `skills/reviewing-design-documents/SKILL.md`，完整读取它要求的 rubric。只读审查 `examples/design-review/design.md` 是否具备实施条件，用中文报告。
-
-然后对照[参考审查结果](examples/design-review/review.md)。示例把“请求已受理”和“导出已完成”都叫成功。你的 Agent 能否发现冲突，并引用两处证据？
-
-用于自己的项目时，让 Agent 能访问所选 Skill 目录，并在请求中点名使用。支持原生 Skill 安装的工具，可以按其安装方式配置，保留引用文件。遇到同名 Skill 先检查再替换。当前仓库提供 Markdown 技能包，没有插件安装器。
+让 Agent 审查 `examples/design-review/design.md`，再对照[参考结果](examples/design-review/review.md)，检查它是否发现“成功”的定义冲突并引用两处证据。
 
 ## 为什么做这些 Skill
 

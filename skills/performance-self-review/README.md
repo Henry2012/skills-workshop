@@ -1,31 +1,31 @@
 # performance-self-review
 
-**Trace the claim before you write the achievement.**
+[简体中文](README.zh-CN.md) · [日本語](README.ja.md)
 
-[简体中文](README.zh-CN.md) · [日本語](README.ja.md) · [Workshop](../../README.md)
+Turn authorized work records into a personal self-review with a traceable evidence ledger.
 
-A self-review often starts with a pile of notes and ends with polished claims that are hard to verify. This skill starts with a source-coverage record and an evidence ledger.
+**Input** — Supply the assessment period, your role, the projects in scope, the required format, and records you are allowed to use. Existing records are enough; extra retrieval needs its own access and authorization.
 
-The useful distinction is between **what you did**, **what the team delivered**, and **what was actually adopted or verified**. A target is not a result. A colleague's deployment is not your implementation. A reported measurement can remain useful if its source, date and limitations stay attached.
+**Output** — Return the review text, a ledger linking claims to sources, and a coverage note. Track discovered records, retrieved bodies and material actually read separately.
 
-**Input:** an assessment period, your role, desired format, and documents or notes you are authorized to use.
+## Working rules
 
-**Output:** a self-review draft, a traceable ledger, and explicit coverage gaps.
+Keep personal actions separate from team outcomes, targets from achieved results, and reported measurements from verified results. Preserve dates, denominators and partial states. Follow the requested length and sections; do not add an action plan unless requested.
 
 ## Minimal example
 
-> Use `skills/performance-self-review/SKILL.md`. Read `examples/self-review/input.md`. Write two short paragraphs covering results and reflection, plus a separate evidence ledger and coverage note. Use only the supplied material; do not contact services or publish anything.
+Install for Codex from your project (Node.js 22.20+):
 
-Read [the reference output](../../examples/self-review/output.md). It credits the fictional contributor for defining acceptance criteria and investigating a failure. It leaves the teammate's implementation and unverified production recovery separate. Run `python3 tools/check.py` to check the committed example's expected facts.
+```sh
+npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill performance-self-review -a codex -y --copy
+```
+
+> Use performance-self-review with the fictional input linked below. Write the requested results and reflection paragraphs, plus a separate evidence ledger. Use only the supplied material.
+
+[Input](https://github.com/Henry2012/skills-workshop/blob/main/examples/self-review/input.md) · [Output](https://github.com/Henry2012/skills-workshop/blob/main/examples/self-review/output.md) · [Local reference](references/example.md)
 
 ## Dependencies and limits
 
-Pasted or local documents are sufficient. No company account, chat connector, fixed storage layout, or other skill is required. If you choose to retrieve additional documents, the agent needs the appropriate tool and permission. Unavailable records remain gaps.
+Local or pasted documents are sufficient. No company connector is required. Reading permission does not authorize publishing, messaging, or updating an employer's system. Keep real source records and outputs outside this public repository.
 
-This repository contains rules and clearly fictional examples only. Your real documents, chats, draft, and ledger are private task data. Keep them outside the public repository. Reading material is not permission to publish a self-review or write to an employer's system.
-
-A well-traced self-review is still a synthesis of supplied evidence. It does not independently establish business adoption, causation, or performance ratings.
-
-## Origin
-
-Developed by Henry2012 with AI assistance. The source workflow and its fictional reference example are retained. Public packaging adds introductions and a connector-free demonstration. [Runtime rules](SKILL.md) · [MIT](../../LICENSE)
+Developed by Henry2012 with AI assistance. This is a fictional demonstration, not an LLM benchmark. [SKILL.md](SKILL.md) · [MIT](LICENSE) · [Workshop](https://github.com/Henry2012/skills-workshop)

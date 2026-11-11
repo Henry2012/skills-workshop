@@ -12,20 +12,36 @@ Pick the one that fits your task. Read it, change it, and keep the parts that he
 
 ## Get started
 
-Clone the repository and open it in an agent that can read local files:
+Requires **Node.js 22.20+** and npm/npx. Run in the project where you want to use the skills. These commands use Vercel's [skills CLI](https://github.com/vercel-labs/skills), pinned to the tested version.
+
+Install all four for **Codex**:
+
+```sh
+npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill '*' -a codex -y --copy
+```
+
+Install only **design review**:
+
+```sh
+npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill reviewing-design-documents -a codex -y --copy
+```
+
+For **Claude Code**, replace `-a codex` with `-a claude-code`. Keep the quotes around `'*'`. The commands install into the current project, skip confirmation, and may replace a same-named installed skill; inspect local customizations first. They do not request global installation.
+
+After installation, ask your agent:
+
+> Use reviewing-design-documents and its required rubric. Review this design for implementation readiness. Keep the review read-only.
+
+The explicit `--copy` installs files under `.agents/skills/` for Codex or `.claude/skills/` for Claude Code. Installation places files; your agent may need to refresh its skill discovery. See the [installation checks and limits](docs/INSTALLATION.md).
+
+To inspect the examples and run the repository checks yourself:
 
 ```sh
 git clone https://github.com/Henry2012/skills-workshop.git
 cd skills-workshop
 ```
 
-Try this request:
-
-> Use `skills/reviewing-design-documents/SKILL.md` and its required rubric. Review `examples/design-review/design.md` for implementation readiness. Keep the review read-only.
-
-Then compare the answer with [the reference review](examples/design-review/review.md). Both “request accepted” and “export finished” are called success in the example. Does your agent catch the conflict and cite both statements?
-
-For your own project, give the agent access to the selected skill directory and name it in your request. If your tool supports native skill installation, use its supported setup and keep the skill's reference files together. Inspect any existing skill with the same name before replacing it. This repository currently ships Markdown skills rather than a plugin installer.
+Ask the agent to review `examples/design-review/design.md` and compare it with [the reference review](examples/design-review/review.md). It should catch the conflicting meanings of success and cite both statements.
 
 ## Why I build these skills
 

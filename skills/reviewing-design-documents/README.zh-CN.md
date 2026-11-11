@@ -1,12 +1,16 @@
 # reviewing-design-documents
 
-**动手之前，先把方案过一遍这八问。**
+[English](README.md) · [日本語](README.ja.md)
 
-[English](README.md) · [日本語](README.ja.md) · [仓库首页](../../README.zh-CN.md)
+用八个基于证据的问题，判断设计能否进入下一阶段。
 
-在设计准备进入下一阶段前，用它判断是否具备条件。必须明确点名本 Skill，普通写方案或讨论设计的请求不会自动触发。
+**输入** — 明确点名本 Skill，提供设计版本、待做决策、当前阶段和获准使用的材料。引用文本中出现技能名不算调用。
 
-两处对“成功”的定义相互矛盾，上线方案没有退路，需求只说“要快”却没说怎样验收。这些问题都可能藏在一份排版精美的文档里。这个 Skill 要求审查者指出具体问题、引用证据，并说明它影响哪一步决定。
+**输出** — 返回七段报告，包括结论、范围、阻塞、问题台账、八问覆盖、未决事项和下一步。结论为 READY、READY_WITH_ACTIONS、NOT_READY 或 INSUFFICIENT_EVIDENCE。
+
+## 关键规则
+
+判断前完整读取 rubric。引用证据，同一根因只记一次，材料覆盖、问题证据与八问状态分别记录。缺附件不能直接认定设计有错。审查只读，结论不授予新执行权限。
 
 ## 具体是哪八问？
 
@@ -35,20 +39,21 @@ API 设计、产品上线方案和运营流程都需要把目标变成动作，�
 
 另一个关键设计是**一个根因只记一条问题**。例如缺失状态模型可能影响多项检查，但不应膨胀成四个重复缺陷。合理的容灾备份不会自动被判为冗余，未核实的部分也不会被写成通过。材料覆盖、证据强度和准备程度分别记录。
 
-**输入**是指定版本的设计、下一步决策、生命周期阶段与获准读取的证据。**输出**是七段报告，含问题台账、八问矩阵、待验证项和后续动作，结论为 `READY`、`READY_WITH_ACTIONS`、`NOT_READY` 或 `INSUFFICIENT_EVIDENCE`。
 
 ## 最小示例
 
-告诉 Agent：使用本目录 `SKILL.md`，完整读取 rubric，只读审查 `examples/design-review/design.md` 是否可进入实施阶段，用中文报告。
+在项目目录中安装到 Codex（Node.js 22.20+）：
 
-对照[参考结果](../../examples/design-review/review.md)，看它是否发现“请求已受理”和“工作已完成”的成功定义冲突，引用两处证据，并合并为一条一致性阻塞。运行 `python3 tools/check.py` 可检查已提交示例的结构合同。
+```sh
+npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill reviewing-design-documents -a codex -y --copy
+```
 
-再做一个实验：只提供第 2 节，声明其余不可读。此时不能对未读章节给出通过结论，应反映证据不足。
+> 使用 reviewing-design-documents，完整读取 rubric，只读审查下方虚构设计是否可以开始实施。
+
+[Rubric](references/eight-question-rubric.md) · [Input](https://github.com/Henry2012/skills-workshop/blob/main/examples/design-review/design.md) · [Output](https://github.com/Henry2012/skills-workshop/blob/main/examples/design-review/review.md)
 
 ## 依赖与边界
 
-本地审查不需要网络、账号或其他 Skill，必须完整读取[八问规则](references/eight-question-rubric.md)。外部事实需要相应授权及来源；不能核验时保留缺口。
+本地审查不依赖账号或其他 Skill。外部主张要有获准来源，否则保留缺口。不能替代生产测试或专业认证，尚无跨模型准确率结论。
 
-文档审查不能替代生产测试、专业认证或修改授权。规则规定结论映射，但模型理解仍可能不同，目前没有跨模型准确率声明。
-
-由 Henry2012 与 AI 协作开发，包含八问规则、误报控制及次级问题状态处理。公开包装保留运行规则。[入口](SKILL.md) · [MIT](../../LICENSE)
+由 Henry2012 与 AI 协作开发。示例使用虚构材料，不是模型效果评测。 [SKILL.md](SKILL.md) · [MIT](LICENSE) · [Workshop](https://github.com/Henry2012/skills-workshop)

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "edition": "0.2.0",
+  "edition": "0.3.0",
   "license": "MIT",
   "origin": "Henry2012; developed with AI assistance; owner confirmed 2026-11-11",
   "files": [
@@ -46,7 +46,23 @@
     },
     {
       "path": "skills/simplify-tech-writing/references/sources.md",
-      "sha256": "d546fb2ec648f8db19b0deb56a8e8f581af1675ef65ae062cf709f54bc9230b2"
+      "sha256": "feb83c4308568261253dc1cd875649d871d7903e7c1d20e26565339dde6b21c9"
+    },
+    {
+      "path": "skills/handoff/LICENSE",
+      "sha256": "6fbf4fd5da0da96bc716b7443b03366470477a90bd603b911885fef5ec6aa851"
+    },
+    {
+      "path": "skills/reviewing-design-documents/LICENSE",
+      "sha256": "6fbf4fd5da0da96bc716b7443b03366470477a90bd603b911885fef5ec6aa851"
+    },
+    {
+      "path": "skills/performance-self-review/LICENSE",
+      "sha256": "6fbf4fd5da0da96bc716b7443b03366470477a90bd603b911885fef5ec6aa851"
+    },
+    {
+      "path": "skills/simplify-tech-writing/LICENSE",
+      "sha256": "6fbf4fd5da0da96bc716b7443b03366470477a90bd603b911885fef5ec6aa851"
     }
   ]
 }

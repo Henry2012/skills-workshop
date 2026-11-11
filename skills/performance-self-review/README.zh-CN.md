@@ -1,27 +1,31 @@
 # performance-self-review
 
-**先查清做了什么，再写个人贡献。**
+[English](README.md) · [日本語](README.ja.md)
 
-[English](README.md) · [日本語](README.ja.md) · [仓库首页](../../README.zh-CN.md)
+把获准使用的工作记录整理成个人自评，并附上可追溯的证据台账。
 
-工作记录很多，不等于能直接写出可信的个人贡献。这个 Skill 先建立来源覆盖记录和证据台账，再整理自评。
+**输入** — 提供考核期、本人角色、项目范围、格式要求及可使用的材料。已有资料即可开展；额外检索需要相应访问能力和授权。
 
-核心是分清**本人做了什么、团队交付了什么、哪些结果已经验证或采用**。目标不能写成结果，同事实施的修复不能变成本人的代码成果。转述指标可以保留，但必须带来源、日期和限制。
+**输出** — 交付自评正文、关联来源的事项台账与覆盖说明。分别统计发现记录、取得正文和实际核读的范围。
 
-**输入**是考核期、本人角色、要求的格式和有权使用的材料。**输出**是自评正文、可回查台账和覆盖缺口。
+## 关键规则
+
+分清本人动作与团队结果、目标与已实现成果、转述指标与已核验结果。保留日期、分母和 partial 状态。按指定篇幅与栏目写，未要求时不加行动计划。
 
 ## 最小示例
 
-要求 Agent 使用本目录 `SKILL.md`，读取 `examples/self-review/input.md`，仅根据给定材料写“结果”和“反思”两段短文，另附证据台账和覆盖说明。不连接外部服务，不发布。
+在项目目录中安装到 Codex（Node.js 22.20+）：
 
-对照[参考输出](../../examples/self-review/output.md)，看它是否将虚构角色的验收设计、问题调查，与同事实施和未验证的生产恢复分开。运行 `python3 tools/check.py` 可检查已提交示例的事实要点。
+```sh
+npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill performance-self-review -a codex -y --copy
+```
+
+> 使用 performance-self-review，根据下方虚构输入撰写要求的结果与反思，另附证据台账。仅使用给定材料。
+
+[Input](https://github.com/Henry2012/skills-workshop/blob/main/examples/self-review/input.md) · [Output](https://github.com/Henry2012/skills-workshop/blob/main/examples/self-review/output.md) · [Local reference](references/example.md)
 
 ## 依赖与边界
 
-粘贴材料或本地文档即可使用，不要求公司账号、聊天连接器、固定目录或其他 Skill。主动检索更多资料时，需要对应工具和授权。读不到的材料记录为缺口。
+本地或粘贴文档即可，不要求公司连接器。读取授权不等于发布、发消息或写入绩效系统的授权。真实材料与产物应保存在公开仓库之外。
 
-公开仓库只包含规则和明确标为虚构的案例。实际使用时的文档、聊天、自评与台账属于私密任务资料，应放在公开仓库之外。读取授权不等于对外发布或写入公司绩效系统的授权。
-
-有证据的自评仍然是对给定材料的整理，不能独立证明业务采用、因果关系或绩效等级。
-
-由 Henry2012 与 AI 协作开发，保留原流程及虚构参考案例，增加三语介绍和无需连接器的演示。[规则](SKILL.md) · [MIT](../../LICENSE)
+由 Henry2012 与 AI 协作开发。示例使用虚构材料，不是模型效果评测。 [SKILL.md](SKILL.md) · [MIT](LICENSE) · [Workshop](https://github.com/Henry2012/skills-workshop)

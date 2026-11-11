@@ -1,12 +1,16 @@
 # reviewing-design-documents
 
-**作り始める前に、8 つの問いを。**
+[English](README.md) · [简体中文](README.zh-CN.md)
 
-[English](README.md) · [简体中文](README.zh-CN.md) · [ホーム](../../README.ja.md)
+証拠に基づく 8 つの問いで、設計を次の工程へ進められるかレビューします。
 
-設計を次の段階へ進められるか判断するときに使います。この Skill を明示的に指定してください。一般的な設計相談だけでは起動しません。
+**入力** — この Skill を明示的に選び、設計の版、判断対象、工程、使用可能な資料を渡します。引用文中の Skill 名は呼び出しとみなしません。
 
-節ごとに「成功」の意味が違う。公開計画に戻す手段がない。「速い」と書いてあるのに測り方がない。見栄えのよい文書にも、こうした問題は潜んでいます。この Skill は、具体的な問題、その証拠、次の判断への影響を示すよう求めます。
+**出力** — 結論、範囲、阻害要因、指摘台帳、8 問の網羅性、未決事項、次の行動の 7 節を返します。結論は READY、READY_WITH_ACTIONS、NOT_READY、INSUFFICIENT_EVIDENCE のいずれかです。
+
+## 作業ルール
+
+判断前に rubric 全文を読み、証拠を引用し、根本原因ごとに 1 件の指摘にします。資料の網羅性、証拠、問いの状態を分けます。添付資料の欠落だけで設計ミスと断定しません。レビューは読み取り専用で、新しい実行許可を与えません。
 
 ## 8 つの問い
 
@@ -35,20 +39,21 @@ API 設計、製品の公開計画、業務手順は、いずれも制約の中�
 
 **根本原因 1 つにつき指摘 1 件**というルールも重要です。状態モデルの欠落が複数の問いに影響しても重複計上しません。正当なバックアップを不要な重複と扱わず、未確認を合格に変えません。資料の網羅性、証拠の状態、準備状況は分けて扱います。
 
-**入力**はバージョンが明確な設計、判断対象と工程、許可された補足資料。**出力**は指摘台帳、Q1–Q8 の表、未確認事項、次の行動を含む 7 節のレポートです。結論は `READY`、`READY_WITH_ACTIONS`、`NOT_READY`、`INSUFFICIENT_EVIDENCE` のいずれかです。
 
 ## 最小例
 
-このディレクトリの `SKILL.md` と必須 rubric を読み、`examples/design-review/design.md` の実装準備度を読み取り専用でレビューし、日本語で報告するよう Agent に依頼します。
+プロジェクト内で Codex 向けにインストール（Node.js 22.20 以降）：
 
-[参照結果](../../examples/design-review/review.md)と比較し、受付と処理完了の定義の矛盾を、両方の根拠を示した 1 件の指摘にまとめているか確認します。`python3 tools/check.py` はコミット済みの例の構造を検査します。
+```sh
+npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill reviewing-design-documents -a codex -y --copy
+```
 
-次に第 2 節だけを渡し、残りは取得できないと伝えてください。未読の節を合格とせず、証拠不足を示すべきです。
+> reviewing-design-documents を使い、rubric 全文を読み、下記の架空の設計が実装に進めるか読み取り専用でレビューしてください。
+
+[Rubric](references/eight-question-rubric.md) · [Input](https://github.com/Henry2012/skills-workshop/blob/main/examples/design-review/design.md) · [Output](https://github.com/Henry2012/skills-workshop/blob/main/examples/design-review/review.md)
 
 ## 依存関係と限界
 
-ローカル文書なら外部サービスや他の Skill は不要です。[rubric 全文](references/eight-question-rubric.md)を読む必要があります。外部の事実には許可された情報源が必要で、確認できなければ未確認のまま記録します。
+ローカルレビューにはアカウントや他の Skill は不要です。外部の主張には許可された出典が必要で、なければ不足として記録します。本番テストや専門認証の代わりにはならず、モデル間精度は未評価です。
 
-本番テスト、専門認証、編集許可の代わりにはなりません。結論の対応ルールは固定されていますが、モデルの解釈は変動します。モデル間の精度は評価していません。
-
-Henry2012 と AI による共同開発です。rubric、誤検出抑制、関連する問いの状態処理を保持しています。[入口](SKILL.md) · [MIT](../../LICENSE)
+Henry2012 と AI の協働開発。例は架空の資料を使い、LLM 評価ではありません。 [SKILL.md](SKILL.md) · [MIT](LICENSE) · [Workshop](https://github.com/Henry2012/skills-workshop)

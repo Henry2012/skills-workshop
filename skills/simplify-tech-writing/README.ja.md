@@ -1,35 +1,31 @@
 # simplify-tech-writing
 
-**読みやすくしても、事実は削らない。**
+[English](README.md) · [简体中文](README.zh-CN.md)
 
-[English](README.md) · [简体中文](README.zh-CN.md) · [ホーム](../../README.ja.md)
+中国語・英語の技術文を、必要な情報を保ったまま読みやすく書き直します。
 
-「HTTP 200」が「サービスは復旧した」に変わる。「通常」が消える。短くするために、安全に操作するための条件が抜け落ちる。読みやすさの改善に見えて、意味が変わっています。
+**入力** — 原文、必要な文脈、読者、形式を渡し、書き直しと曖昧さのレビューのどちらを求めるか指定します。
 
-この Skill は中国語・英語の技術説明、手順書、障害対応の文章を対象に、否定、順序、責任、制限値、識別子、不確実性を保持して書き直します。
+**出力** — 同じ意味の明快な文章を返します。レビューでは具体的な曖昧さと修正案を示します。不足する文脈で意味や結果が変わる場合だけ質問します。
 
-**入力**は技術文、必要な文脈、読者、指定形式。**出力**は事実の範囲を保った明快な文章です。レビューを求められた場合は、具体的な曖昧さと修正案を示します。意味が変わる情報が不足している場合だけ、焦点を絞って質問します。
+## 作業ルール
 
-## 試してみる
+条件、否定、主体、順序、数値、単位、識別子、不確実性を保持します。HTTP 200 を復旧済みに変えず、自動動作を手動操作にせず、不明な主体を作りません。コマンドの編集は実行許可ではありません。
 
-Agent に次のように依頼します。
+## 最小例
 
-> `skills/simplify-tech-writing/SKILL.md` を使い、次の英文を読みやすくしてください。復旧したという結論は追加せず、英文の書き直しだけを返してください: The export request failed at 10:00. One retry returned HTTP 200 at 10:02; the final export status was not checked.
+プロジェクト内で Codex 向けにインストール（Node.js 22.20 以降）：
 
-参照例です。
+```sh
+npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill simplify-tech-writing -a codex -y --copy
+```
 
-> At 10:00, the export request failed. At 10:02, one retry returned HTTP 200. The final export status was not checked.
+> simplify-tech-writing で次の英文を明確にし、全事実を保って英文の書き直しだけを返してください: The export request failed at 10:00. One retry returned HTTP 200 at 10:02; the final export status was not checked.
 
-表現は変えても、失敗、1 回の再試行、2 つの時刻、応答コード、最終状態が未確認であることは保持します。[11 の独自例](references/examples.md)には、代名詞、自動再試行、制限値、API 名も含まれます。
+[11 original cases](references/examples.md) · [Methods](references/methods.md) · [Sources](references/sources.md)
 
-「誰が接続を閉じるのか」という文脈を削って試してください。実行者を推測せず、曖昧さを示すことが期待されます。
+## 依存関係と限界
 
-## 方法と限界
+通常の編集に PDF、ネットワーク、アカウント、他の Skill は不要です。ASD-STE100 に着想を得た編集方法であり、適合性検査ではありません。規格と辞書は同梱しません。正確な照会には利用権限のある資料が必要で、日本語の編集能力は未評価です。
 
-読者と目的を確認し、資料で裏付けられる関係だけを明確にし、最後に原文と照合します。分野の用語を保持し、観察、推論、提案を区別します。一律の禁止語リストや字数制限は使わず、編集中のコマンドを実行しません。[詳細な方法](references/methods.md)は必要に応じて読みます。
-
-通常の利用に PDF、ネットワーク、アカウント、API キー、他の Skill は不要です。実行指示と例の解説は中国語、対象例は中国語と英語です。日本語の紹介文は、日本語の書き直し能力を評価済みであることを意味しません。
-
-Henry2012 と AI が協働開発し、ASD-STE100 から着想を得ています。公開版には規格 PDF、辞書、番号付き規則の対応表を含めず、STE 適合認証や ASD の推薦も主張しません。正確な規格照会には利用権限のある資料が必要です。[出典と MIT の適用範囲](references/sources.md)を参照してください。
-
-例は解説用であり、モデル評価ではありません。ルートの `python3 tools/check.py` はパッケージを検査します。実際の書き直しは原文と比較してください。
+Henry2012 と AI の協働開発。例は架空の資料を使い、LLM 評価ではありません。 [SKILL.md](SKILL.md) · [MIT](LICENSE) · [Workshop](https://github.com/Henry2012/skills-workshop)

@@ -1,27 +1,31 @@
 # handoff
 
-**换个会话，继续同一件事。**
+[English](README.md) · [日本語](README.ja.md)
 
-[English](README.md) · [日本語](README.ja.md) · [仓库首页](../../README.zh-CN.md)
+把当前会话整理成可持久保存的交接，让新 Agent 继续已获授权的工作。
 
-对话里既有决定，也有放弃的方案、历史命令和多种“完成”。这个 Skill 只把下一位 Agent 真正需要的状态留下。
+**输入** — 提供下一会话的重点、当前目标、完整范围、产物与验证结果。“最新请求”和“仍在继续的目标”分别记录。
 
-关键设计是把**当前目标**和**最新请求**分开。临时追问不会悄悄替换原目标。每项完成声明要带证据和验证边界；已有继续授权保留，历史命令不自动重跑。
+**输出** — 生成用户指定位置或项目根目录中的 `HANDOFF.md`，保留 13 个固定中文标题，写清证据、验证边界、未知项与新会话第一步。
 
-**输入**是会话或事项记录、当前要求、文件与验证结果。**输出**是包含 13 个固定章节的 `HANDOFF.md`，说明未知项和新会话第一步。
+## 关键规则
+
+封闭清单保留全部成员，已有产物用链接引用，去掉秘密信息。接管先读文件再复述；已有授权继续有效，历史命令不自动重跑，已锁定结果不自动重验。
 
 ## 最小示例
 
-在仓库根目录运行 `python3 tools/demo_handoff.py`。程序会执行一个离线测试，并在 `build/handoff/` 生成带真实本机路径的参考交接文件。这是确定性的演示，不调用模型。
+在项目目录中安装到 Codex（Node.js 22.20+）：
 
-阅读[场景](../../examples/handoff/scenario.md)，然后要求 Agent 使用本目录的 `SKILL.md`，结合场景和 `build/handoff/test-result.json`，将交接写入 `build/handoff/AGENT_HANDOFF.md`。要求保留范围、使用真实绝对路径，不部署、不重跑已完成工作。
+```sh
+npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill handoff -a codex -y --copy
+```
 
-检查它是否仍以虚构的离线状态判断任务为目标，是否仅把测试通过写成本地验证，以及是否要求下个会话先读取和复述，再按已有授权继续文档工作。
+> 使用 handoff，为当前任务创建新会话交接。保留完整范围、证据链接，并说明下个 Agent 获准做什么。
+
+[Scenario](https://github.com/Henry2012/skills-workshop/blob/main/examples/handoff/scenario.md) · [Offline demo](https://github.com/Henry2012/skills-workshop/blob/main/tools/demo_handoff.py) · [Comparison](https://github.com/Henry2012/skills-workshop/blob/main/docs/HANDOFF-COMPARISON.md)
 
 ## 依赖与边界
 
-实际使用需要 Agent 能读取会话与相关文件。只有示例程序需要 Python 3.10+，不需要账号、密钥、网络或其他 Skill。没记录过的事实不能凭空恢复。
+需要 Agent 能读取会话与相关文件，不依赖账号、服务或其他 Skill。缺失的证据保持未知。只有离线演示需要 Python 3.10+。
 
-固定章节标题保留中文，正文可以使用指定语言。真实交接可能包含路径和业务标识，未经审查不要公开。
-
-由 Henry2012 与 AI 协作开发，来源流程版本 0.4.1。公开版保留运行合同，增加介绍和演示。[规则](SKILL.md) · [MIT](../../LICENSE)
+由 Henry2012 与 AI 协作开发。示例使用虚构材料，不是模型效果评测。 [SKILL.md](SKILL.md) · [MIT](LICENSE) · [Workshop](https://github.com/Henry2012/skills-workshop)

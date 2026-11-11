@@ -25,6 +25,10 @@ RUNTIME = (
     "skills/simplify-tech-writing/references/methods.md",
     "skills/simplify-tech-writing/references/examples.md",
     "skills/simplify-tech-writing/references/sources.md",
+    "skills/handoff/LICENSE",
+    "skills/reviewing-design-documents/LICENSE",
+    "skills/performance-self-review/LICENSE",
+    "skills/simplify-tech-writing/LICENSE",
 )
 REVIEW_HEADINGS = ["Verdict", "Scope and evidence", "Blocking findings",
                    "Finding ledger", "Eight-question coverage matrix",
@@ -46,7 +50,7 @@ def public_files():
 
 
 def manifest():
-    return {"schema_version": 1, "edition": "0.2.0", "license": "MIT",
+    return {"schema_version": 1, "edition": "0.3.0", "license": "MIT",
             "origin": "Henry2012; developed with AI assistance; owner confirmed 2026-11-11",
             "files": [{"path": s, "sha256": hashlib.sha256((ROOT / s).read_bytes()).hexdigest()}
                       for s in RUNTIME]}
@@ -93,7 +97,7 @@ def check_tree(files):
                 require(resolved.is_relative_to(ROOT) and resolved.exists(),
                         f"broken or escaping relative link in {p.relative_to(ROOT)}: {target}")
     for name in SKILLS:
-        for f in ("SKILL.md", "README.md", "README.zh-CN.md", "README.ja.md"):
+        for f in ("SKILL.md", "README.md", "README.zh-CN.md", "README.ja.md", "LICENSE"):
             require((ROOT / "skills" / name / f).is_file(), f"missing {name}/{f}")
     require({p.name for p in (ROOT / "skills").iterdir()} == set(SKILLS),
             "unexpected skill directory")

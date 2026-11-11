@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.3.0 — 2026-11-11
+
+- Add tested one-command installation instructions for all or selected skills using skills@1.7.6; document project scope and verification limits.
+- Rewrite each skill's three reader guides around purpose, input, output and constraints. Keep the eight design-review questions and cross-domain explanation.
+- Include an MIT license in each independently installed skill and replace repository-external relative guide links with public URLs.
+- Compare the two handoff workflows at fixed revisions. Retain the local workflow because its operative storage, evidence and takeover contracts differ substantially.
+
 ## Documentation update — 2026-11-11
 
 - Rework the English, Chinese and Japanese homepages around the maintainer's purpose, a direct getting-started path, and the four practical problems addressed by the skills.

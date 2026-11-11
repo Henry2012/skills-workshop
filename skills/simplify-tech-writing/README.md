@@ -1,41 +1,31 @@
 # simplify-tech-writing
 
-**Make it easier to read without making it less true.**
+[简体中文](README.zh-CN.md) · [日本語](README.ja.md)
 
-[简体中文](README.zh-CN.md) · [日本語](README.ja.md) · [Workshop](../../README.md)
+Rewrite Chinese or English technical text so it is easier to follow without losing information.
 
-“HTTP 200” becomes “the service recovered.” “Usually” disappears. A shorter sentence quietly drops the condition that made an operation safe. Those are meaning changes disguised as editing.
+**Input** — Supply the source text, necessary context, intended reader and requested format. Ask for a rewrite or an ambiguity review.
 
-This skill rewrites Chinese and English technical explanations, runbooks and troubleshooting notes while preserving the facts. Its focus is the information a fluent rewrite can accidentally lose: negation, sequence, responsibility, limits, identifiers and uncertainty.
+**Output** — Return clearer text with the same meaning. For reviews, identify concrete ambiguities and corrections. Ask only when missing context would change the meaning or result.
 
-**Input:** technical text, its context, the intended reader, and any requested format.
+## Working rules
 
-**Output:** clearer text with the same factual boundaries. For a review request, it identifies specific ambiguities and possible corrections. A missing fact that changes meaning triggers a focused question.
+Keep conditions, negation, actors, sequence, numbers, units, identifiers and uncertainty. Do not turn HTTP 200 into recovery, automatic behavior into manual instructions, or an unknown actor into an invented one. Editing a command does not authorize running it.
 
-## Try the failure that matters
+## Minimal example
 
-Ask your agent:
+Install for Codex from your project (Node.js 22.20+):
 
-> Use `skills/simplify-tech-writing/SKILL.md`. Make this easier to read without adding a recovery claim: “The export request failed at 10:00. One retry returned HTTP 200 at 10:02; the final export status was not checked.” Return only the rewrite.
+```sh
+npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill simplify-tech-writing -a codex -y --copy
+```
 
-One reference rewrite is:
+> Use simplify-tech-writing to clarify: “The export request failed at 10:00. One retry returned HTTP 200 at 10:02; the final export status was not checked.” Preserve every fact and return only the rewrite.
 
-> At 10:00, the export request failed. At 10:02, one retry returned HTTP 200. The final export status was not checked.
+[11 original cases](references/examples.md) · [Methods](references/methods.md) · [Sources](references/sources.md)
 
-The wording can vary. The failed request, single retry, two timestamps, response code and unverified final state must survive. Read [all 11 original examples](references/examples.md), including ambiguous pronouns, automatic retries, limits and API names.
+## Dependencies and limits
 
-For a useful counterexample, remove the context that tells you who closes a connection. The agent should expose that ambiguity instead of inventing the actor.
+No PDF, network, account or other skill is required for normal editing. This is a heuristic writing method inspired by ASD-STE100, not a compliance checker. The standard and dictionary are not bundled. Exact standard queries need an authorized source; Japanese rewriting has not been evaluated.
 
-## How it works
-
-It identifies the reader and task, resolves only ambiguities supported by the material, makes actions and relationships explicit, then compares the rewrite against the source. It preserves established terminology and distinguishes what happened from what someone inferred or recommended.
-
-It does not use a universal banned-word list, enforce arbitrary sentence lengths, or treat editing as permission to execute the commands being discussed. [Detailed methods](references/methods.md) are loaded only when relevant.
-
-## Dependencies, origin and limits
-
-No PDF, API key, account, network, or other skill is needed for normal editing. Runtime instructions and example commentary are Chinese, with Chinese and English source texts. The Japanese introduction does not establish evaluated Japanese rewriting capability.
-
-Developed by Henry2012 with AI assistance and inspired by ASD-STE100. The public edition retains the original methods and examples, excludes the standard PDF, dictionary and numbered-rule mappings, and claims no STE certification or ASD endorsement. Exact standard-entry queries require an authorized source. See [sources and MIT scope](references/sources.md).
-
-The examples are authored demonstrations, not model benchmarks. Run `python3 tools/check.py` from the repository root for packaging checks, then inspect your agent's rewrite against the original.
+Developed by Henry2012 with AI assistance. This is a fictional demonstration, not an LLM benchmark. [SKILL.md](SKILL.md) · [MIT](LICENSE) · [Workshop](https://github.com/Henry2012/skills-workshop)
