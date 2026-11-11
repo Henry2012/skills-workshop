@@ -21,6 +21,14 @@ The quotes preserve the literal wildcard. The first --yes allows npx to fetch th
 
 ## Verification scope
 
+Verified on 2026-11-11 (Asia/Shanghai) against [source commit 3556210](https://github.com/Henry2012/skills-workshop/commit/35562102f975585fc8a42b8a31b934b83067a1cd), using the GitHub commands above in empty project directories:
+
+| Command target | Installed skills | Files matched byte for byte | Exit code | References, license and lock |
+|---|---:|---:|---:|---|
+| Codex, all | 4 | 27 | 0 | PASS |
+| Codex, reviewing-design-documents only | 1 | 7 | 0 | PASS |
+| Claude Code, all | 4 | 27 | 0 | PASS |
+
 Tests use separate empty project directories, an isolated npm cache and XDG_STATE_HOME, and DISABLE_TELEMETRY=1. The existing user-level skill installation is not used as a test target. The telemetry setting also disables the CLI's remote security-audit requests; no third-party security score is claimed.
 
 For each tested installation, inspect actual files, compare every installed file's bytes with its source, check relative resource links, and inspect skills-lock.json. With --copy, Codex receives files in .agents/skills/ and Claude Code receives files in .claude/skills/. Selected installation must contain only the requested skill. Each skill includes its own MIT license; reader-guide links to repository-wide examples use public URLs.
