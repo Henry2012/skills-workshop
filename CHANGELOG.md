@@ -1,5 +1,10 @@
 # Changelog
 
+## Documentation update — 2026-11-11
+
+- Rework the English, Chinese and Japanese homepages around the maintainer's purpose, a direct getting-started path, and the four practical problems addressed by the skills.
+- Show all eight design-review questions on the homepage and retain source, validation and usage boundaries. Credit Matt Pocock's repository as an inspiration for the introduction's organization; skill runtime files are unchanged.
+
 ## 0.2.0 — 2026-11-11
 
 - Add a standalone public edition of simplify-tech-writing with its original editing methods, 11 original cases, and English, Chinese and Japanese introductions.
