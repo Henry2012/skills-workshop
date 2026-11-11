@@ -12,7 +12,7 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILLS = ("handoff", "reviewing-design-documents", "performance-self-review")
+SKILLS = ("handoff", "reviewing-design-documents", "performance-self-review", "simplify-tech-writing")
 RUNTIME = (
     "skills/handoff/SKILL.md",
     "skills/reviewing-design-documents/SKILL.md",
@@ -20,6 +20,11 @@ RUNTIME = (
     "skills/reviewing-design-documents/references/eight-question-rubric.md",
     "skills/performance-self-review/SKILL.md",
     "skills/performance-self-review/references/example.md",
+    "skills/simplify-tech-writing/SKILL.md",
+    "skills/simplify-tech-writing/agents/openai.yaml",
+    "skills/simplify-tech-writing/references/methods.md",
+    "skills/simplify-tech-writing/references/examples.md",
+    "skills/simplify-tech-writing/references/sources.md",
 )
 REVIEW_HEADINGS = ["Verdict", "Scope and evidence", "Blocking findings",
                    "Finding ledger", "Eight-question coverage matrix",
@@ -41,7 +46,7 @@ def public_files():
 
 
 def manifest():
-    return {"schema_version": 1, "edition": "0.1.0", "license": "MIT",
+    return {"schema_version": 1, "edition": "0.2.0", "license": "MIT",
             "origin": "Henry2012; developed with AI assistance; owner confirmed 2026-11-11",
             "files": [{"path": s, "sha256": hashlib.sha256((ROOT / s).read_bytes()).hexdigest()}
                       for s in RUNTIME]}

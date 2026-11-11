@@ -1,6 +1,6 @@
 # Validation coverage
 
-Release candidate 0.1.0, checked on 2026-11-11 UTC.
+Edition 0.2.0, checked on 2026-11-11 (Asia/Shanghai). Unchanged 0.1.0 runtime evidence is retained below.
 
 ## What was exercised
 
@@ -10,7 +10,9 @@ Release candidate 0.1.0, checked on 2026-11-11 UTC.
 | Handoff artifact | The checker verifies the 13 fixed headings, current test receipt, matching source hashes, and verification-boundary markers when the demo has run. Generated artifacts stay in ignored `build/`. |
 | Design-review reference | The walkthrough identifies the explicit completion contradiction, cites both statements, keeps one root-cause finding, and retains Q5/Q7 as affected questions. Three negative controls check that missing headings, a false READY verdict, and a lost secondary effect are rejected by the local checker. |
 | Self-review reference | Selected facts and coverage limits are checked against the invented input. The source reference also retains its explicit fictional-data statement. Meaning and attribution were reviewed while authoring the example. |
-| Packaging | Relative Markdown file links, three-language introductions, the selected skill set and six runtime-file hashes are checked. |
+| Technical-writing public edition | Original method paragraphs and all 11 original examples were compared with the development text. The standard PDF, dictionary and systematic rule mappings are absent. Editing demonstrations were reviewed for retained meaning; no independent LLM evaluation was performed. |
+| Design-review introductions | All Q1–Q8 are listed in English, Chinese and Japanese, with cross-domain illustrations and explicit stage/evidence limits. The runtime entrypoint and rubric are unchanged. |
+| Packaging | Relative Markdown file links, three-language introductions, the selected skill set and eleven runtime-file hashes are checked. |
 | Publication hygiene | The candidate contains text files only. The checker flags common secret prefixes, private-key blocks, personal home paths, internal hosts and unexpected email addresses. The final Git tree and metadata receive a separate release review. |
 
 Run the examples and checks from the repository root:

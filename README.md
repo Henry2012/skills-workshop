@@ -6,15 +6,18 @@
 
 An agent can produce a convincing answer while losing the current goal, treating a partial check as success, or taking credit for somebody else's work. This workshop turns those failure modes into explicit working rules.
 
-I develop these workflows with AI assistance. The first collection focuses on three things: carrying work into the next session, reviewing a design before implementation, and writing a self-review from evidence. Each skill comes with a small, fictional case you can inspect, run through your own agent, and challenge.
+I develop these workflows with AI assistance. The collection covers carrying work into the next session, reviewing designs, tracing personal contributions, and making technical writing clearer without changing its meaning. Each skill comes with fictional examples you can inspect, run through your own agent, and challenge.
 
 ## Start with a problem
 
 | You have… | Try | What makes it useful |
 |---|---|---|
 | A long conversation and a fresh agent waiting | [handoff](skills/handoff/README.md) | Preserve the current goal, exact scope, evidence, and permission to continue. Historical commands stay historical. |
-| A design that looks ready | [reviewing-design-documents](skills/reviewing-design-documents/README.md) | Eight questions, one finding per root cause, and a verdict tied to the supplied version. Missing evidence stays visible. |
+| A design that looks ready | [reviewing-design-documents](skills/reviewing-design-documents/README.md) | Eight questions before you build: what is missing, duplicated, conflicting, unsupported, ambiguous, infeasible, untestable, or unhandled when things fail? |
 | A pile of work notes and a self-review deadline | [performance-self-review](skills/performance-self-review/README.md) | Build an evidence ledger before the narrative. Separate your actions, team outcomes, targets, and verified results. |
+| A technical explanation that is hard to read | [simplify-tech-writing](skills/simplify-tech-writing/README.md) | Make the wording clearer while keeping conditions, numbers, identifiers and uncertainty. HTTP 200 must not turn into “recovered.” |
+
+The [eight-question guide](skills/reviewing-design-documents/README.md#the-eight-questions) shows how the same questions apply to APIs, product launches and operating procedures. The questions travel; the evidence and acceptance criteria remain specific to the decision.
 
 These are instruction-based skills. They guide an agent's reasoning and use of available tools. They do not train the underlying model, install a background service, or guarantee that an agent will follow every rule.
 
@@ -52,13 +55,14 @@ flowchart LR
   B --> C[Do authorized work]
   C --> D[Carry state to the next session]
   C --> E[Trace personal contribution]
+  B --> F[Explain clearly and preserve meaning]
 ```
 
 This is a way to combine the skills, not an automatic pipeline. A review verdict is not permission to execute. A handoff is not a command replay. A self-review is not independent proof of business impact.
 
 ## What is mine
 
-The three published workflows were developed by Henry2012 with AI assistance. My contribution is the choice of problems, operating constraints, acceptance rules, and iteration through use. AI-assisted drafting, packaging, and checks are part of the development process.
+The four published workflows were developed by Henry2012 with AI assistance. My contribution is the choice of problems, operating constraints, acceptance rules, and iteration through use. AI-assisted drafting, packaging, and checks are part of the development process. The technical-writing skill acknowledges ASD-STE100 as an inspiration without redistributing the standard.
 
 This repository publishes those workflows, portable demonstrations, and maintenance records. It does not present unmodified third-party skills as original work. See [provenance and license scope](docs/PROVENANCE.md) and [selection decisions](docs/SELECTION.md).
 

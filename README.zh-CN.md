@@ -6,15 +6,18 @@
 
 Agent 的回答可能看起来已经完成，却忘了原来的目标，把局部验证说成全部成功，或者把团队成果写成个人贡献。这个仓库把这些问题变成明确、可检查的工作规则。
 
-这些 Skill 由 Henry2012 与 AI 协作开发。首批聚焦三个场景：换会话时交接工作、实施前审查设计、根据证据写绩效自评。每项都配有虚构案例，方便你查看、交给自己的 Agent 运行，再检查结果。
+这些 Skill 由 Henry2012 与 AI 协作开发，覆盖会话交接、设计审查、绩效取证，以及保留原意的技术写作。每项都配有虚构案例，方便你查看、交给自己的 Agent 运行，再检查结果。
 
 ## 按问题选择
 
 | 遇到的问题 | Skill | 关键设计 |
 |---|---|---|
 | 对话太长，要换新会话继续 | [handoff](skills/handoff/README.zh-CN.md) | 保留目标、完整范围、证据与已有授权。历史命令不会自动重跑。 |
-| 设计看似完整，不确定能否实施 | [reviewing-design-documents](skills/reviewing-design-documents/README.zh-CN.md) | 八问审查，同一根因只记一次；缺证据不会被当成通过。 |
+| 设计看似完整，不确定能否实施 | [reviewing-design-documents](skills/reviewing-design-documents/README.zh-CN.md) | 动手前过八问：有无遗漏、无谓重复、矛盾、错误、歧义，能否落地、怎样验收、失败怎么办。 |
 | 工作材料很多，不知道如何写个人贡献 | [performance-self-review](skills/performance-self-review/README.zh-CN.md) | 先建证据台账，再写正文；区分本人动作、团队结果、目标与已验证成果。 |
+| 技术说明绕口，又担心简化后丢信息 | [simplify-tech-writing](skills/simplify-tech-writing/README.zh-CN.md) | 保留条件、数字、术语和不确定性；不能把 HTTP 200 改写成“已恢复”。 |
+
+[八问介绍](skills/reviewing-design-documents/README.zh-CN.md)用 API、产品上线和运营流程说明其通用性：提问角度可以复用，证据和验收标准仍须适配具体决策。
 
 这是指导 Agent 工作的指令型 Skill。它们不训练模型，不安装后台服务，也不保证每个模型都会严格遵守规则。
 
@@ -46,7 +49,7 @@ python3 tools/check.py
 
 ## 贡献与来源
 
-三项流程由 Henry2012 与 AI 协作开发。人的贡献包括问题选择、工作约束、验收规则和使用中的迭代；AI 参与起草、包装和检查。未经实质改造的第三方 Skill 不作为本仓库作品收录。
+四项流程由 Henry2012 与 AI 协作开发。人的贡献包括问题选择、工作约束、验收规则和使用中的迭代；AI 参与起草、包装和检查。技术写作技能注明 ASD-STE100 的启发来源，不随包分发标准。未经实质改造的第三方 Skill 不作为本仓库作品收录。
 
 欢迎提供可复现的问题、最小规则改进，以及证明其他行为没有被破坏的案例。不要提交真实聊天、个人绩效、密钥或内部链接。
 
