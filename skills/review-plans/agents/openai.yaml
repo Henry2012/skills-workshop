@@ -1,0 +1,6 @@
+interface:
+  display_name: "Review Plans"
+  short_description: "Review plan quality and readiness for the next stage"
+  default_prompt: "Use $review-plans to review this plan read-only with the required eight-question rubric and assess readiness for its intended next stage."
+policy:
+  allow_implicit_invocation: false

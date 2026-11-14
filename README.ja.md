@@ -23,14 +23,14 @@ npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill '*' -a codex -y --c
 **設計レビューだけ**をインストール：
 
 ```sh
-npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill reviewing-design-documents -a codex -y --copy
+npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill review-plans -a codex -y --copy
 ```
 
 **Claude Code** では `-a codex` を `-a claude-code` に置き換えます。`'*'` の引用符は残してください。現在のプロジェクトに確認なしでインストールし、同名の既存 Skill を置き換える可能性があります。変更済みの内容を先に確認してください。グローバルインストールは指定していません。
 
 インストール後、Agent に依頼します。
 
-> reviewing-design-documents と必須 rubric を使い、この設計が実装に進めるか読み取り専用でレビューしてください。
+> review-plans と必須 rubric を使い、この設計が実装に進めるか読み取り専用でレビューしてください。
 
 `--copy` を明示し、Codex では `.agents/skills/`、Claude Code では `.claude/skills/` にファイルをコピーします。ファイルの配置後、Agent 側の Skill 検出を更新する必要がある場合があります。[インストール検証と限界](docs/INSTALLATION.md)を参照してください。
 
@@ -57,7 +57,7 @@ cd skills-workshop
 
 ある節では、ジョブがキューに入れば成功。別の節では、結果ファイルができて初めて成功。どちらも実装できますが、両方を同時には満たせません。
 
-[`reviewing-design-documents`](skills/reviewing-design-documents/README.ja.md) は 8 つの問いで設計を確認します。
+[`review-plans`](skills/review-plans/README.ja.md) は、技術計画、製品リリース計画、業務手順の完全性、明確さ、実行可能性と次の工程への準備状況を、証拠に基づく 8 つの問いで確認します。
 
 | | 問い |
 |---|---|
@@ -72,7 +72,7 @@ cd skills-workshop
 
 問いが確認するのは、目的、主張、行動、制約、結果という計画の共通構造です。API 設計、製品公開、業務手順でも使えます。**共通なのは問いであり、必要な証拠と合格基準は分野ごとに変わります。**初期案とデプロイ手順書に同じ詳細さを求めることもありません。
 
-根本原因 1 つにつき指摘は 1 件にまとめ、判断を証拠に結び付け、不足する資料を明示します。レビュー時は Skill を明示的に選択してください。[分野をまたぐ適用例と限界](skills/reviewing-design-documents/README.ja.md)も参照できます。
+根本原因 1 つにつき指摘は 1 件にまとめ、判断を証拠に結び付け、不足する資料を明示します。レビュー時は Skill を明示的に選択してください。[分野をまたぐ適用例と限界](skills/review-plans/README.ja.md)も参照できます。
 
 ### 読みやすさのために、大事な情報を失いたくない
 
@@ -95,7 +95,7 @@ cd skills-workshop
 | やりたいこと | Skill | 用意するもの |
 |---|---|---|
 | 新しいセッションで仕事を続ける | [handoff](skills/handoff/README.ja.md) | 会話、現在の指示、成果物 |
-| 設計を次の工程へ進められるか判断する | [reviewing-design-documents](skills/reviewing-design-documents/README.ja.md) | 設計、判断対象、関連する証拠 |
+| 計画を次の工程へ進められるか判断する | [review-plans](skills/review-plans/README.ja.md) | 設計、判断対象、関連する証拠 |
 | 技術的な内容を明確に説明する | [simplify-tech-writing](skills/simplify-tech-writing/README.ja.md) | 原文、文脈、読者 |
 | 自分の貢献を正確に説明する | [performance-self-review](skills/performance-self-review/README.ja.md) | 評価期間、役割、利用権限のある資料 |
 

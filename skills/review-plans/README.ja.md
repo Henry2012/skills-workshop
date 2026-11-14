@@ -1,8 +1,8 @@
-# reviewing-design-documents
+# review-plans
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
-証拠に基づく 8 つの問いで、設計を次の工程へ進められるかレビューします。
+証拠に基づく 8 つの問いで、計画の完全性、明確さ、実行可能性と次の工程への準備状況を確認します。技術計画、製品リリース計画、業務手順が対象で、見た目や文書レイアウトの評価ではありません。
 
 **入力** — この Skill を明示的に選び、設計の版、判断対象、工程、使用可能な資料を渡します。引用文中の Skill 名は呼び出しとみなしません。
 
@@ -45,10 +45,10 @@ API 設計、製品の公開計画、業務手順は、いずれも制約の中�
 プロジェクト内で Codex 向けにインストール（Node.js 22.20 以降）：
 
 ```sh
-npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill reviewing-design-documents -a codex -y --copy
+npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill review-plans -a codex -y --copy
 ```
 
-> reviewing-design-documents を使い、rubric 全文を読み、下記の架空の設計が実装に進めるか読み取り専用でレビューしてください。
+> review-plans を使い、rubric 全文を読み、下記の架空の設計が実装に進めるか読み取り専用でレビューしてください。
 
 [Rubric](references/eight-question-rubric.md) · [Input](https://github.com/Henry2012/skills-workshop/blob/main/examples/design-review/design.md) · [Output](https://github.com/Henry2012/skills-workshop/blob/main/examples/design-review/review.md)
 

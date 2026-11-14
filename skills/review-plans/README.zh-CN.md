@@ -1,8 +1,8 @@
-# reviewing-design-documents
+# review-plans · 方案审查
 
 [English](README.md) · [日本語](README.ja.md)
 
-用八个基于证据的问题，判断设计能否进入下一阶段。
+用八问检查方案是否完整、清晰、可执行，并判断是否可以进入下一阶段。适用于技术方案、产品上线方案和运营流程，不用于视觉审美或文档排版评审。
 
 **输入** — 明确点名本 Skill，提供设计版本、待做决策、当前阶段和获准使用的材料。引用文本中出现技能名不算调用。
 
@@ -45,10 +45,10 @@ API 设计、产品上线方案和运营流程都需要把目标变成动作，�
 在项目目录中安装到 Codex（Node.js 22.20+）：
 
 ```sh
-npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill reviewing-design-documents -a codex -y --copy
+npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill review-plans -a codex -y --copy
 ```
 
-> 使用 reviewing-design-documents，完整读取 rubric，只读审查下方虚构设计是否可以开始实施。
+> 使用 review-plans，完整读取 rubric，只读审查下方虚构设计是否可以开始实施。
 
 [Rubric](references/eight-question-rubric.md) · [Input](https://github.com/Henry2012/skills-workshop/blob/main/examples/design-review/design.md) · [Output](https://github.com/Henry2012/skills-workshop/blob/main/examples/design-review/review.md)
 

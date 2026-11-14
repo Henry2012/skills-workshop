@@ -1,9 +1,9 @@
 ---
-name: reviewing-design-documents
-description: 仅用户明确选择本Skill时，按八问框架只读审查设计文档及实施准备度。
+name: review-plans
+description: 仅在用户明确选择本 Skill、需要审查技术方案、产品上线方案或运营流程等方案的完整性、清晰性、可执行性及下一阶段准备度时使用；不用于视觉审美或排版评审。
 ---
 
-# Reviewing Design Documents
+# Review Plans
 
 ## Explicit Invocation
 

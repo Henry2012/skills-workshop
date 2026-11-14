@@ -9,15 +9,15 @@
       "sha256": "89f002f4adc3e6989db34069902f6383c0ac74832f064f232b684434927d3e6e"
     },
     {
-      "path": "skills/reviewing-design-documents/SKILL.md",
-      "sha256": "734ceb4ea9056c5764b7e7575b687ee318e97676ebdd45cca8194b8b3420fde6"
+      "path": "skills/review-plans/SKILL.md",
+      "sha256": "2884e7d5b9b5bc40c12656ead98d61d711afdf4b179bbe31c0ba4c27437412ec"
     },
     {
-      "path": "skills/reviewing-design-documents/agents/openai.yaml",
-      "sha256": "73c2bb6665a46aa7186ab1b1d0d0330734737ad0246475b0cc9752a4274211da"
+      "path": "skills/review-plans/agents/openai.yaml",
+      "sha256": "6505475187d0cb2861252494f69d68cb410f1afa51b5d09563ada98ac2726008"
     },
     {
-      "path": "skills/reviewing-design-documents/references/eight-question-rubric.md",
+      "path": "skills/review-plans/references/eight-question-rubric.md",
       "sha256": "1893ad685111ea6de4db625bf42ca24acbc720e8577aca8f26c0602702ffc0ac"
     },
     {
@@ -53,7 +53,7 @@
       "sha256": "6fbf4fd5da0da96bc716b7443b03366470477a90bd603b911885fef5ec6aa851"
     },
     {
-      "path": "skills/reviewing-design-documents/LICENSE",
+      "path": "skills/review-plans/LICENSE",
       "sha256": "6fbf4fd5da0da96bc716b7443b03366470477a90bd603b911885fef5ec6aa851"
     },
     {

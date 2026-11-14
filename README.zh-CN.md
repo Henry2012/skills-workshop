@@ -23,14 +23,14 @@ npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill '*' -a codex -y --c
 只安装**设计审查**：
 
 ```sh
-npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill reviewing-design-documents -a codex -y --copy
+npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill review-plans -a codex -y --copy
 ```
 
 使用 **Claude Code** 时，将 `-a codex` 换成 `-a claude-code`。保留 `'*'` 的引号。这些命令安装到当前项目并跳过确认，可能替换已有同名 Skill，执行前先检查自己的改动；它们不要求全局安装。
 
 安装后告诉 Agent：
 
-> 使用 reviewing-design-documents，完整读取它要求的 rubric，只读审查这份设计是否具备实施条件。
+> 使用 review-plans，完整读取它要求的 rubric，只读审查这份设计是否具备实施条件。
 
 显式指定 `--copy`：Codex 文件复制到 `.agents/skills/`，Claude Code 文件复制到 `.claude/skills/`。文件安装完成后，Agent 可能需要刷新技能发现。详见[安装实测与边界](docs/INSTALLATION.md)。
 
@@ -57,7 +57,7 @@ cd skills-workshop
 
 一处说任务进队列就算成功，另一处说必须等结果文件生成。两种逻辑都能写成代码，却无法同时满足。
 
-[`reviewing-design-documents`](skills/reviewing-design-documents/README.zh-CN.md) 用八问审查方案：
+[`review-plans`](skills/review-plans/README.zh-CN.md) 用八问检查技术方案、产品上线方案和运营流程是否完整、清晰、可执行，并判断能否进入下一阶段：
 
 | | 问题 |
 |---|---|
@@ -72,7 +72,7 @@ cd skills-workshop
 
 这些问题检查方案共有的结构：目标、主张、动作、约束和后果。因此，从 API 设计到产品上线、运营流程，都可以沿用这些提问角度。**通用的是问题，证据和验收标准需要随领域调整。**初步构想和部署手册也不应该接受同一深度的检查。
 
-同一个根因只记一条问题，每项判断都指向证据，缺失材料保持可见。需要审查时明确点名这个 Skill。[查看跨领域示例与边界](skills/reviewing-design-documents/README.zh-CN.md)。
+同一个根因只记一条问题，每项判断都指向证据，缺失材料保持可见。需要审查时明确点名这个 Skill。[查看跨领域示例与边界](skills/review-plans/README.zh-CN.md)。
 
 ### 更好懂，不能以丢掉关键信息为代价
 
@@ -95,7 +95,7 @@ cd skills-workshop
 | 你要做什么 | Skill | 准备什么 |
 |---|---|---|
 | 在新会话继续工作 | [handoff](skills/handoff/README.zh-CN.md) | 会话、当前要求和产物 |
-| 判断设计能否进入下一阶段 | [reviewing-design-documents](skills/reviewing-design-documents/README.zh-CN.md) | 设计、待做决策及相关证据 |
+| 判断方案能否进入下一阶段 | [review-plans](skills/review-plans/README.zh-CN.md) | 设计、待做决策及相关证据 |
 | 把技术内容解释清楚 | [simplify-tech-writing](skills/simplify-tech-writing/README.zh-CN.md) | 原文、上下文和目标读者 |
 | 准确描述个人贡献 | [performance-self-review](skills/performance-self-review/README.zh-CN.md) | 考核期、本人角色和获准使用的材料 |
 

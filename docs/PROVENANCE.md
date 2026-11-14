@@ -1,6 +1,6 @@
 # Provenance and license scope
 
-The owner confirmed on 2026-11-11 that `handoff`, `reviewing-design-documents`, and `performance-self-review` were developed with AI assistance and may be released under MIT.
+The owner confirmed on 2026-11-11 that `handoff`, `reviewing-design-documents` (now `review-plans`), and `performance-self-review` were developed with AI assistance and may be released under MIT.
 
 The owner also confirmed authorship of `simplify-tech-writing` and requested its inclusion in this MIT-licensed collection, retaining original methods and examples while excluding the standard PDF. Its public edition was prepared on the same date.
 
@@ -9,7 +9,7 @@ These are locally developed workflows, not copies presented as third-party inven
 | Component | Origin | Public edition |
 |---|---|---|
 | handoff | Maintainer's AI-assisted workflow, source version 0.4.1 | Runtime rules preserved; multilingual introduction and fictional walkthrough added. |
-| reviewing-design-documents | Maintainer's AI-assisted design, rubric and subsequent refinements | Explicit invocation gate, verdict logic and references preserved; multilingual introduction and fictional review added. |
+| review-plans | Maintainer's AI-assisted design, rubric and subsequent refinements | Explicit invocation gate, verdict logic and references preserved; multilingual introduction and fictional review added. |
 | performance-self-review | Maintainer's AI-assisted evidence and attribution workflow | Rules and explicitly fictional reference preserved; multilingual introduction and portable demonstration added. |
 | simplify-tech-writing | Maintainer's AI-assisted technical-writing methods and original examples; inspired by ASD-STE100 | Retains original methods and 11 examples; excludes the standard PDF, dictionary and systematic rule/entry mappings. See [specific source and license boundaries](../skills/simplify-tech-writing/references/sources.md). |
 | Repository guides, examples and local checker | Prepared for this public edition with AI assistance | MIT. Examples are invented and are not customer or employee records. |

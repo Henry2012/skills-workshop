@@ -20,17 +20,17 @@ Install all four for **Codex**:
 npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill '*' -a codex -y --copy
 ```
 
-Install only **design review**:
+Install only **plan review**:
 
 ```sh
-npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill reviewing-design-documents -a codex -y --copy
+npx --yes skills@1.7.6 add Henry2012/skills-workshop --skill review-plans -a codex -y --copy
 ```
 
 For **Claude Code**, replace `-a codex` with `-a claude-code`. Keep the quotes around `'*'`. The commands install into the current project, skip confirmation, and may replace a same-named installed skill; inspect local customizations first. They do not request global installation.
 
 After installation, ask your agent:
 
-> Use reviewing-design-documents and its required rubric. Review this design for implementation readiness. Keep the review read-only.
+> Use review-plans and its required rubric. Review this design for implementation readiness. Keep the review read-only.
 
 The explicit `--copy` installs files under `.agents/skills/` for Codex or `.claude/skills/` for Claude Code. Installation places files; your agent may need to refresh its skill discovery. See the [installation checks and limits](docs/INSTALLATION.md).
 
@@ -57,7 +57,7 @@ A useful handoff carries the decisions that still matter: the goal, the exact sc
 
 One section says a job succeeds when it enters the queue. Another says it succeeds only after the output exists. You can implement either statement. You cannot satisfy both.
 
-[`reviewing-design-documents`](skills/reviewing-design-documents/README.md) reviews a design through eight questions:
+[`review-plans`](skills/review-plans/README.md) reviews technical plans, product-launch plans and operating procedures through eight evidence-led questions:
 
 | | Question |
 |---|---|
@@ -72,7 +72,7 @@ One section says a job succeeds when it enters the queue. Another says it succee
 
 These questions apply to the structure of a plan: its purpose, claims, actions, constraints and consequences. That makes them useful across API designs, product launches and operating procedures. **The questions stay useful across domains; the evidence and acceptance criteria change.** An early proposal and a deployment runbook deserve different levels of detail.
 
-The skill records one finding per root cause, cites the material behind it, and keeps missing evidence visible. Explicitly select it when you want a review. [See the cross-domain examples and limits](skills/reviewing-design-documents/README.md#why-the-questions-travel-across-domains).
+The skill records one finding per root cause, cites the material behind it, and keeps missing evidence visible. Explicitly select it when you want a review. [See the cross-domain examples and limits](skills/review-plans/README.md#why-the-questions-travel-across-domains).
 
 ### Clearer writing should preserve the difficult details
 
@@ -95,7 +95,7 @@ You defined the acceptance criteria. A teammate implemented the fix. The team pa
 | When you need to… | Skill | Starting material |
 |---|---|---|
 | Continue work in a fresh session | [handoff](skills/handoff/README.md) | Conversation, current instructions and artifacts |
-| Decide whether a design can enter its next stage | [reviewing-design-documents](skills/reviewing-design-documents/README.md) | Design, intended decision and supporting evidence |
+| Decide whether a plan can enter its next stage | [review-plans](skills/review-plans/README.md) | Design, intended decision and supporting evidence |
 | Explain technical work clearly | [simplify-tech-writing](skills/simplify-tech-writing/README.md) | Source text, context and reader |
 | Describe your own contribution accurately | [performance-self-review](skills/performance-self-review/README.md) | Assessment period, role and authorized records |
 

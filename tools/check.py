@@ -12,12 +12,12 @@ import re
 import sys
 
 ROOT = Path(__file__).resolve().parents[1]
-SKILLS = ("handoff", "reviewing-design-documents", "performance-self-review", "simplify-tech-writing")
+SKILLS = ("handoff", "review-plans", "performance-self-review", "simplify-tech-writing")
 RUNTIME = (
     "skills/handoff/SKILL.md",
-    "skills/reviewing-design-documents/SKILL.md",
-    "skills/reviewing-design-documents/agents/openai.yaml",
-    "skills/reviewing-design-documents/references/eight-question-rubric.md",
+    "skills/review-plans/SKILL.md",
+    "skills/review-plans/agents/openai.yaml",
+    "skills/review-plans/references/eight-question-rubric.md",
     "skills/performance-self-review/SKILL.md",
     "skills/performance-self-review/references/example.md",
     "skills/simplify-tech-writing/SKILL.md",
@@ -26,7 +26,7 @@ RUNTIME = (
     "skills/simplify-tech-writing/references/examples.md",
     "skills/simplify-tech-writing/references/sources.md",
     "skills/handoff/LICENSE",
-    "skills/reviewing-design-documents/LICENSE",
+    "skills/review-plans/LICENSE",
     "skills/performance-self-review/LICENSE",
     "skills/simplify-tech-writing/LICENSE",
 )
@@ -99,7 +99,10 @@ def check_tree(files):
     for name in SKILLS:
         for f in ("SKILL.md", "README.md", "README.zh-CN.md", "README.ja.md", "LICENSE"):
             require((ROOT / "skills" / name / f).is_file(), f"missing {name}/{f}")
-    require({p.name for p in (ROOT / "skills").iterdir()} == set(SKILLS),
+    legacy = ROOT / "skills/reviewing-design-documents"
+    require(legacy.is_dir() and {p.name for p in legacy.iterdir()} == {"README.md"},
+            "legacy review path must contain only a migration README")
+    require({p.name for p in (ROOT / "skills").iterdir()} == set(SKILLS) | {legacy.name},
             "unexpected skill directory")
 
 

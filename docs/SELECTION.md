@@ -5,7 +5,7 @@
 | Skill | Existing substantive work | Why it belongs |
 |---|---|---|
 | handoff | Scope precedence, evidence boundaries, read-only takeover, existing authorization, locked-result handling | Makes a continuation inspectable and reduces opportunities for accidental replay. |
-| reviewing-design-documents | Eight-question rubric, root-cause deduplication, evidence and coverage states, deterministic verdict mapping, secondary-question handling | Makes design review findings traceable instead of generating a generic checklist. |
+| review-plans | Eight-question rubric, root-cause deduplication, evidence and coverage states, deterministic verdict mapping, secondary-question handling | Makes design review findings traceable instead of generating a generic checklist. |
 | performance-self-review | Source coverage accounting, personal/team attribution, metric windows, distinction between reported and verified outcomes | Produces a narrative whose claims can be checked against a ledger. |
 | simplify-tech-writing | Chinese/English technical adaptations, preservation of conditions and evidence boundaries, 11 original examples | Makes explanations clearer without turning uncertainty into a promise or changing operational meaning. A separate public edition excludes restricted reference material. |
 

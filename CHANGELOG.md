@@ -1,5 +1,12 @@
 # Changelog
 
+## Rename review skill — 2026-11-14
+
+- Rename reviewing-design-documents to review-plans (Review Plans / 方案审查) and clarify the scope: technical plans, product launches and operating procedures, rather than visual styling or document layout.
+- Update skill discovery metadata, installation commands, multilingual introductions, internal links and runtime manifest paths.
+- Preserve the eight-question rubric, review body, explicit-invocation policy, evidence states, verdict logic and read-only boundary.
+- Preserve the old directory link with a README-only migration notice; do not ship a second installable skill. Document copied-installation and deep-link migration in docs/INSTALLATION.md; retain historical installation results under their original name.
+
 ## 0.3.0 — 2026-11-11
 
 - Add tested one-command installation instructions for all or selected skills using skills@1.7.6; document project scope and verification limits.
